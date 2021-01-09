@@ -25,9 +25,9 @@ processed information available via rest APIs.
     - Generated documentation for the APIs.
 
 # Adicionando swagger
-- Swagger foi adicionado utilizando composer.
+- Swagger foi adicionado utilizando composer. O link do git do pacote utilizado é:
 ```
-[https://github.com/DarkaOnLine/SwaggerLume](https://github.com/DarkaOnLine/SwaggerLume)
+https://github.com/DarkaOnLine/SwaggerLume
 ```
 
 - Para gerar o swagger caso exista alguma mudança nas annotations dos endpoints, precisamos gerar o swagger atualizado com os comandos dentro do container do php:
