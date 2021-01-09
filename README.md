@@ -3,12 +3,12 @@ Esse projeto é feito utilizando lumen e docker
 
 #PHP CHALLENGE:
 - Brief Description:
-Your customer receives two XML models from his partner. This information must be
+    - Your customer receives two XML models from his partner. This information must be
 available for both web system and mobile app. XML content can be very extensive and we must
 ensure the content will be fully processed.
 
 - The challenge
-Create an application to manually upload the given XMLs and have an option
+    - Create an application to manually upload the given XMLs and have an option
 to asynchronously process them. The results of the processed data must be logged. Make the
 processed information available via rest APIs.
 
