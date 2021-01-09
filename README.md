@@ -65,3 +65,7 @@ Pode ser que, ao tentar lançar uma exception, o lumen não consiga guardar o lo
 ```
 chmod -R 777 (ou 775) storage
 ```
+
+```
+OBS: Ao tentar acessar a parte visual do swagger através do localhost:8082/api/documentation, ele lançava uma exception pois a pasta storage não estava com permissão. Você provavelmente precisará colocar essa permissão nesse caso.
+```
