@@ -69,3 +69,9 @@ chmod -R 777 (ou 775) storage
 ```
 OBS: Ao tentar acessar a parte visual do swagger através do localhost:8082/api/documentation, ele lançava uma exception pois a pasta storage não estava com permissão. Você provavelmente precisará colocar essa permissão nesse caso.
 ```
+
+# Utilizando autenticação JWT
+Como um bônus do projeto, utilizamos o JWT para fazer a autenticação do usuário. É necessário que recebamos o JWT via header (Bearer Token) em cada uma de nossas requisições que o usuário precisa estar logado. Utilizamos este pacote:
+```
+composer require firebase/php-jwt
+```

@@ -113,7 +113,12 @@ $app->router->group([
 });
 
 $app->withFacades();
+// Adicionando o Swagger
 $app->configure('swagger-lume');
 $app->register(\SwaggerLume\ServiceProvider::class);
+// Adicionando o JWTMiddleWare para proteger nossos métodos
+$app->routeMiddleware([
+    'jwt.auth' => App\Http\Middleware\JwtMiddleware::class,
+]);
 
 return $app;

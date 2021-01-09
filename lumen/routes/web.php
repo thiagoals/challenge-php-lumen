@@ -22,3 +22,12 @@ $router->group(['prefix'=>'authentication'], function() use ($router){
         'uses'=>'AuthController@login'
     ]);
 });
+
+// Conjunto de métodos que somente usuários autenticados conseguem fazer
+$router->group(
+    ['prefix'=>'file','middleware'=>'jwt.auth']
+    , function() use ($router){
+    $router->post('read',[
+        'uses'=>'FileController@read'
+    ]);
+});
