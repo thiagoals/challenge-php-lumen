@@ -23,3 +23,26 @@ processed information available via rest APIs.
 - Bonus
     - Authentication method to the APIs.
     - Generated documentation for the APIs.
+
+# Adicionando swagger
+- Swagger foi adicionado utilizando composer.
+```
+[https://github.com/DarkaOnLine/SwaggerLume](https://github.com/DarkaOnLine/SwaggerLume)
+```
+
+- Para gerar o swagger caso exista alguma mudança nas annotations dos endpoints, precisamos gerar o swagger atualizado com os comandos dentro do container do php:
+```
+php artisan swagger-lume:generate
+```
+
+- e depois
+
+```
+php artisan swagger-lume:publish
+```
+
+# Atualizar as permissões da pasta storage
+- Pode ser que, ao tentar lançar uma exception, o lumen não consiga guardar o log. Isso se dá porque a pasta storage não está com as permissões que deveria ter. Nesse caso precisamos utilizar o comando dentro do docker, no path /var/www/html:
+```
+chmod -R 777 (ou 775) storage
+```
