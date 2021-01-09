@@ -112,4 +112,8 @@ $app->router->group([
     require __DIR__.'/../routes/web.php';
 });
 
+$app->withFacades();
+$app->configure('swagger-lume');
+$app->register(\SwaggerLume\ServiceProvider::class);
+
 return $app;
