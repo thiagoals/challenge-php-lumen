@@ -75,3 +75,6 @@ Como um bônus do projeto, utilizamos o JWT para fazer a autenticação do usuá
 ```
 composer require firebase/php-jwt
 ```
+
+# Habilitando o cors
+Criamos um middleware para habilitar o cors da aplicação, pois precisamos acessar esta api através do localhost.

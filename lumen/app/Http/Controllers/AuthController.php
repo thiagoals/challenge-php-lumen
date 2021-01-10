@@ -32,15 +32,19 @@ class AuthController extends BaseController
     /**
      * @OA\Post(
      *     path="/authentication/login",
-     *     tags={"login","authentication"},
+     *     tags={"Login"},
      *     @OA\Response(
      *         response="200",
-     *         description="Retorna um token JWT do usuário",
+     *         description="Faz o login do usuário.",
      *         @OA\JsonContent()
      *     ),
      *     @OA\Response(
      *         response="400",
-     *         description="Error: Bad request.",
+     *         description="Erro: Usuário ou senha incorretos.",
+     *     ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="Retorna um token JWT do usuário"
      *     ),
      * )
      */

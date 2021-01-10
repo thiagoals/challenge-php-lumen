@@ -120,5 +120,11 @@ $app->register(\SwaggerLume\ServiceProvider::class);
 $app->routeMiddleware([
     'jwt.auth' => App\Http\Middleware\JwtMiddleware::class,
 ]);
-
+// Adicionando CorsMiddleware para conseguirmos requisitar o nosso serviço através do localhost
+/**
+ * TODO - Verificar se essas configurações irão para produção ou não
+ */
+$app->middleware([
+    App\Http\Middleware\CorsMiddleware::class
+ ]);
 return $app;

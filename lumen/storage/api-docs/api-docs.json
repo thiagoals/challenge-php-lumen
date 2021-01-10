@@ -9,6 +9,27 @@
         "version": "1.0"
     },
     "paths": {
+        "/authentication/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "operationId": "App\\Http\\Controllers\\AuthController::login",
+                "responses": {
+                    "200": {
+                        "description": "Retorna um token JWT do usuário",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request."
+                    }
+                }
+            }
+        },
         "/sample/{category}/things": {
             "get": {
                 "tags": [
@@ -46,6 +67,27 @@
                     },
                     "400": {
                         "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            }
+        },
+        "/file/read": {
+            "post": {
+                "tags": [
+                    "Read XML file"
+                ],
+                "operationId": "App\\Http\\Controllers\\FileController::read",
+                "responses": {
+                    "200": {
+                        "description": "Retorna um token JWT do usuário",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request."
                     }
                 }
             }

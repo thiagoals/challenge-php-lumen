@@ -16,11 +16,11 @@ class FileController extends BaseController
 
     /**
      * @OA\Post(
-     *     path="/authentication/login",
-     *     tags={"login","authentication"},
+     *     path="/file/read",
+     *     tags={"Read XML file"},
      *     @OA\Response(
      *         response="200",
-     *         description="Retorna um token JWT do usuário",
+     *         description="Lê um arquivo xml",
      *         @OA\JsonContent()
      *     ),
      *     @OA\Response(
