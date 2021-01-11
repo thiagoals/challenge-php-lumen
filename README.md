@@ -78,3 +78,14 @@ composer require firebase/php-jwt
 
 # Habilitando o cors
 Criamos um middleware para habilitar o cors da aplicação, pois precisamos acessar esta api através do localhost.
+
+# Bateria de testes
+Para executar a bateria de testes, basta utilizar o comando dentro da pasta /var/www/html:
+```
+    vendor/bin/phpunit
+```
+
+Caso queira executar apenas um método, utilizar o comando:
+```
+    vendor/bin/phpunit --filter=testAuthentication (exemplo)
+```
