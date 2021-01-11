@@ -20,6 +20,15 @@ class CriaTabelaUsuarios extends Migration
             $table->string('senha');
             $table->timestamps();
         });
+
+        //Inserindo usuário
+        DB::table('usuarios')->insert(
+            array(
+                'email'=>'thiagoaaugustols@gmail.com',
+                'nome'=>'Thiago Augusto',
+                'senha'=>'e10adc3949ba59abbe56e057f20f883e' //123456
+            )
+        );
     }
 
     /**

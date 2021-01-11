@@ -34,6 +34,12 @@ Este projeto utiliza os seguintes serviços:
 - PHPMyAdmin (imagem padrão) - Utilizado apenas por praticidade, caso queira remover para o seu projeto, fique à vontade.
 ```
 
+# Adicionando a base de dados do projeto
+Existe uma migration de usuários que já possui um usuário a ser inserido. Neste caso, precisamos executar o comando para criar a tabela de usuários e inserir o usuário nela:
+```
+php artisan migrate
+```
+
 # Adicionando swagger
 Swagger foi adicionado utilizando composer. O link do git do pacote utilizado é:
 ```

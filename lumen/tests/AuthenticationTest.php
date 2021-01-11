@@ -23,4 +23,11 @@ class AuthenticationTest extends TestCase
         $response = $this->call('POST','/authentication/login',['email'=>'thiagoaaugustols@gmail.com','senha'=>'1234567']);
         $this->assertEquals(400, $response->status());
     }
+
+    public function testAuthenticationInvalid()
+    {
+        // Teste para saber se o usuário consegue se autenticar (verificar se status 200 com usuário e senha corretos)
+        $response = $this->call('POST','/authentication/login',['email'=>'thiagoaaugustols','senha'=>'123']);
+        $this->assertEquals(422, $response->status());
+    }
 }
