@@ -76,6 +76,13 @@ Como um bônus do projeto, utilizamos o JWT para fazer a autenticação do usuá
 composer require firebase/php-jwt
 ```
 
+# Utilizando RabbitMQ/CloudAMQP
+Para utilizar a dependência do php-amqplib do laravel, foi necessária a instalação e habilitação da extensão sockets, pois o mesmo utiliza essa extensão para conectar ao cloudamqp. Essa extensão foi instalada dentro do Dockerfile do php. Sobre a instalação da dependência que irá conectar com o cloudamqp, utilizei este:
+```
+   composer require vladimir-yuldashev/laravel-queue-rabbitmq 
+```
+Lembrando que ele irá instalar o php-cloudamqp/php-cloudamqp como biblioteca necessária para utilizar esta.
+
 # Habilitando o cors
 Criamos um middleware para habilitar o cors da aplicação, pois precisamos acessar esta api através do localhost.
 
