@@ -1,15 +1,6 @@
 version: "3.3"
 
 services:
-  db:
-    container_name: mysql
-    image: mysql:5.7
-    restart: always
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: challenge-root
-      MYSQL_DATABASE: challenge-php
 
   nginx:
     container_name: nginx
@@ -19,8 +10,6 @@ services:
       - php
     ports:
       - "8082:80"
-    depends_on:
-      - db
   
   php:
     container_name: php
@@ -29,20 +18,5 @@ services:
       - ./lumen:/var/www/html
     working_dir: /var/www/html/app/public
     command: php-fpm
-    links:
-      - db:db
     ports:
       - "9000:9000"
-    depends_on:
-      - db
-
-  phpmyadmin:
-    depends_on:
-      - db
-    image: phpmyadmin/phpmyadmin
-    restart: always
-    ports:
-      - "8083:80"
-    environment:
-      PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: challenge-root

@@ -25,9 +25,9 @@ $router->group(['prefix'=>'authentication'], function() use ($router){
 
 // Conjunto de métodos que somente usuários autenticados conseguem fazer
 $router->group(
-    ['prefix'=>'file','middleware'=>'jwt.auth']
+    ['prefix'=>'rabbitmq','middleware'=>'jwt.auth']
     , function() use ($router){
-    $router->post('read',[
-        'uses'=>'FileController@read'
+    $router->post('push',[
+        'uses'=>'AMQPController@push'
     ]);
 });

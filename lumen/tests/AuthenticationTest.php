@@ -5,11 +5,6 @@ use Laravel\Lumen\Testing\DatabaseTransactions;
 
 class AuthenticationTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
     public function testAuthenticationTrue()
     {
         // Teste para saber se o usuário consegue se autenticar (verificar se status 200 com usuário e senha corretos)
@@ -19,14 +14,14 @@ class AuthenticationTest extends TestCase
 
     public function testAuthenticationFalse()
     {
-        // Teste para saber se o usuário consegue se autenticar (verificar se status 200 com usuário e senha corretos)
+        // Teste para saber se o usuário consegue se autenticar (verificar se status 400 com usuário e/ou senha incorretos)
         $response = $this->call('POST','/authentication/login',['email'=>'thiagoaaugustols@gmail.com','senha'=>'1234567']);
         $this->assertEquals(400, $response->status());
     }
 
     public function testAuthenticationInvalid()
     {
-        // Teste para saber se o usuário consegue se autenticar (verificar se status 200 com usuário e senha corretos)
+        // Teste para saber se o usuário consegue se autenticar (verificar se status 422 com email inválido)
         $response = $this->call('POST','/authentication/login',['email'=>'thiagoaaugustols','senha'=>'123']);
         $this->assertEquals(422, $response->status());
     }
